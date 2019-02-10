@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "419470735861",
+    "firebase_url": "https://damapp-5f259.firebaseio.com",
+    "project_id": "damapp-5f259",
+    "storage_bucket": "damapp-5f259.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419470735861:android:a3eab0873bf7adb3",
+        "android_client_info": {
+          "package_name": "com.example.darag.dam_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419470735861-5n4a6iufajcebm9g6h234b4uoj2t4orp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.darag.dam_app",
+            "certificate_hash": "d8632e4d1b1b36be253674bcb5fe95867e46d7e6"
+          }
+        },
+        {
+          "client_id": "419470735861-hmoo2rbug01suijt3hjrt8omisainid7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbggojHaqK_Zn_LxEX4-IyBZOIlTDJyBU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419470735861-hmoo2rbug01suijt3hjrt8omisainid7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
