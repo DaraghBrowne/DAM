@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -85,5 +86,20 @@ public class LoginActivity extends AppCompatActivity {
 
         Toast.makeText(getApplicationContext(),s, Toast.LENGTH_LONG).show();
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if(user != null){
+            //user is already logged in
+            //so bring user to home page
+            Intent homeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+            startActivity(homeActivity);
+            finish();
+
+        }
     }
 }
