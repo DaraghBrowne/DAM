@@ -18,7 +18,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:src="@drawable/logo_rounded"
-        app:layout_constraintBottom_toTopOf="@+id/loginUsername"
+        app:layout_constraintBottom_toTopOf="@+id/loginEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,8 +32,8 @@
 
     <EditText
         android:background="@drawable/login_edittext_style"
-        android:hint="Username"
-        android:id="@+id/loginUsername"
+        android:hint="Email"
+        android:id="@+id/loginEmail"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

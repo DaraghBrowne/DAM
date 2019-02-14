@@ -1,5 +1,6 @@
 package com.example.darag.dam_app.Activities;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -32,7 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
         userEmail = findViewById(R.id.regMail);
         userPassword = findViewById(R.id.regPassword);
         userPassword2 = findViewById(R.id.regPasswordConfirm);
-        userName = findViewById(R.id.regUsername);
+        userName = findViewById(R.id.regUserName);
         regBtn = findViewById(R.id.regButton);
 
         mAuth = FirebaseAuth.getInstance();
@@ -66,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void CreateUserAccount(String email, String name, String password) {
+    private void CreateUserAccount(String email, final String name, String password) {
 
         //method to create user account with specific email and password
         mAuth.createUserWithEmailAndPassword(email,password)
@@ -78,13 +80,38 @@ public class RegisterActivity extends AppCompatActivity {
                             //user account created successfully
                             showMessage("Account Created!");
 
-                            //after we create an account we need to update their name maybe?
+                            //after we create an account we need to update their name (/other info if needed)
+                            UpdateUserInfo(name, mAuth.getCurrentUser());
 
                         }
                         else{
 
                             //account not successfully created
                             showMessage("account creation error" + task.getException().getMessage());
+                        }
+                    }
+                });
+    }
+
+    //update user info (ONLY NAME ATM)
+    private void UpdateUserInfo(String name, FirebaseUser currentUser) {
+        //StorageReference mStorage = FirebaseStorage.getInstance().getReference().child();
+
+        UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+        currentUser.updateProfile(profileUpdate)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful()){
+                            //user info was updated successfully
+                            showMessage("Registration Complete");
+
+                            //take user to home activity
+                            Intent homeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+                            startActivity(homeActivity);
+                            finish();
                         }
                     }
                 });

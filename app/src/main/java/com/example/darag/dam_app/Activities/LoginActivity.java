@@ -5,17 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.darag.dam_app.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button regButton;
+    private EditText userEmail, userPassword;
+    private Button loginButton;
+    private Button regButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
+
 
         regButton= findViewById(R.id.loginRegButton);
 
