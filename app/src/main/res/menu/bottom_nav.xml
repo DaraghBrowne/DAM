@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/nav_moods"
+        android:icon="@drawable/ic_mood_black_24dp"
+        android:title="Moods"/>
+
+    <item
+        android:id="@+id/nav_cr"
+        android:icon="@drawable/ic_contact_mail_black_24dp"
+        android:title="CodeRed"/>
+
+    <item
+        android:id="@+id/nav_breathe"
+        android:icon="@drawable/ic_spa_black_24dp"
+        android:title="Breathe"/>
+
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings"/>
+
+</menu>

@@ -22,6 +22,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'  //dependency for bottomNav
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 
     //firebase core
