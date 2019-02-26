@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DAM_app</string>
+
+    <array name = "moods">
+        <item>Happy</item>
+        <item>Okay</item>
+        <item>Sad</item>
+    </array>
 </resources>
