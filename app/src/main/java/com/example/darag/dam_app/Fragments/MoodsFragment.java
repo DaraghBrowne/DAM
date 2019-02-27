@@ -60,12 +60,15 @@ public class MoodsFragment extends Fragment {
             //creates unique string inside moods for id
             String id = databaseMoods.push().getKey();
 
+            //new mood type var
             Mood mood = new Mood(id, moodType, moodNote);
 
+            //id will be diff for each set of values entered
             databaseMoods.child(id).setValue(mood);
 
             Toast.makeText(getActivity(),"Mood Note added!", Toast.LENGTH_LONG).show();
-        }else{
+        }
+        else    {
             Toast.makeText(getActivity(),"Please enter your mood note", Toast.LENGTH_LONG);
         }
 
