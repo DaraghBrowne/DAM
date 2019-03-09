@@ -6,7 +6,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/relLayoutCR1">
+        android:id="@+id/relLayoutCalm1">
 
         <include layout="@layout/layout_top_tabs"/>
 
@@ -16,8 +16,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relCRLayout2"
-        android:layout_below="@id/relLayoutCR1">
+        android:id="@+id/relLayoutCalm2"
+        android:layout_below="@id/relLayoutCalm1">
 
         <include layout="@layout/layout_center_viewpager"/>
 

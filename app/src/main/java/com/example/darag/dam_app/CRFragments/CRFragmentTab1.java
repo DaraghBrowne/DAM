@@ -1,4 +1,4 @@
-package com.example.darag.dam_app.Fragments;
+package com.example.darag.dam_app.CRFragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -10,10 +10,12 @@ import android.view.ViewGroup;
 
 import com.example.darag.dam_app.R;
 
-public class BreatheFragment extends Fragment {
+public class CRFragmentTab1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_breathe,container,false);
+
+        //specify layout we want to show for the fragment
+        return inflater.inflate(R.layout.fragment_cr_tab1,container,false);
     }
 }

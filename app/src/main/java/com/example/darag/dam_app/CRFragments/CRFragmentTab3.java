@@ -1,4 +1,4 @@
-package com.example.darag.dam_app.Fragments;
+package com.example.darag.dam_app.CRFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +13,7 @@ import android.widget.EditText;
 
 import com.example.darag.dam_app.R;
 
-public class CRFragment extends Fragment {
-
+public class CRFragmentTab3 extends Fragment {
     private EditText mEditTextTo;
     private EditText mEditTextSubject;
     private EditText mEditTextMessage;
@@ -23,7 +22,7 @@ public class CRFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cr,container,false);
+        View view = inflater.inflate(R.layout.fragment_cr_tab3,container,false);
 
         mEditTextTo = view.findViewById(R.id.edit_text_to);
         mEditTextSubject = view.findViewById(R.id.edit_text_subject);
@@ -59,5 +58,4 @@ public class CRFragment extends Fragment {
         intent.setType("message/rfc822"); //makes sure we only open email clients
         startActivity(Intent.createChooser(intent, "Choose an app to send the email"));
     }
-
 }

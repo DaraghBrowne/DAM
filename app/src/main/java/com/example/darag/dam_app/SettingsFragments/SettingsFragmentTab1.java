@@ -1,4 +1,4 @@
-package com.example.darag.dam_app.Fragments;
+package com.example.darag.dam_app.SettingsFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,8 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static android.content.ContentValues.TAG;
 
-public class SettingsFragment extends Fragment {
-
+public class SettingsFragmentTab1 extends Fragment {
     //Firebase
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 
@@ -30,7 +29,7 @@ public class SettingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_settings,container,false);
+        View view = inflater.inflate(R.layout.fragment_settings_tab1,container,false);
 
         mSignOut= view.findViewById(R.id.sign_out);
 

@@ -36,9 +36,9 @@ public class MoodsFragment extends Fragment {
         tabLayout.setupWithViewPager(viewpager);
 
         //set text in tabs
-        tabLayout.getTabAt(0).setText("M Tab 1");
-        tabLayout.getTabAt(1).setText("M Tab 2");
-        tabLayout.getTabAt(2).setText("M Tab 2");
+        tabLayout.getTabAt(0).setText("Tracker");
+        tabLayout.getTabAt(1).setText("Thoughts");
+        tabLayout.getTabAt(2).setText("Graph");
 
 
         return view;

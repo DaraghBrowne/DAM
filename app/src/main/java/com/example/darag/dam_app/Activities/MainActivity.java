@@ -7,11 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.darag.dam_app.Fragments.BreatheFragment;
-import com.example.darag.dam_app.Fragments.CRFragment;
+import com.example.darag.dam_app.CalmFragments.CalmFragment;
+import com.example.darag.dam_app.CRFragments.CRFragment;
 import com.example.darag.dam_app.HomeFragments.HomeFragment;
 import com.example.darag.dam_app.MoodsFragments.MoodsFragment;
-import com.example.darag.dam_app.Fragments.SettingsFragment;
+import com.example.darag.dam_app.SettingsFragments.SettingsFragment;
 import com.example.darag.dam_app.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new CRFragment();
                             break;
                         case R.id.nav_breathe:
-                            selectedFragment = new BreatheFragment();
+                            selectedFragment = new CalmFragment();
                             break;
                         case R.id.nav_settings:
                             selectedFragment = new SettingsFragment();
