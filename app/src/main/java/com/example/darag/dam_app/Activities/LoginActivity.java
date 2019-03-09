@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     //if successful bring user to home page
-                    Intent homeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+                    Intent homeActivity = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(homeActivity);
                     finish();
                 }
@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
         if(user != null){
             //user is already logged in
             //so bring user to home page
-            Intent homeActivity = new Intent(getApplicationContext(), HomeActivity.class);
+            Intent homeActivity = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(homeActivity);
             finish();
 

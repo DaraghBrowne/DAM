@@ -1,53 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:id="@+id/textViewMoods"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="monospace"
-        android:text="How are You Feeling?"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-    <Spinner
-        android:id="@+id/spinnerMoods"
+    <!-- Top toolbar -->
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewMoods"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp"
-        android:entries="@array/moods" />
+        android:id="@+id/relLayoutMoods1">
 
-    <EditText
-        android:id="@+id/editTextMood"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerMoods"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
-        android:ems="10"
-        android:hint="Enter a note on how you're feeling..."
-        android:inputType="textMultiLine" />
+        <include layout="@layout/layout_top_tabs"/>
 
-    <Button
-        android:id="@+id/buttonAddMood"
+    </RelativeLayout>
+
+    <!-- main section (nested fragment to be swipable tab) -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextMood"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="148dp"
-        android:text="Add Mood" />
+        android:layout_height="match_parent"
+        android:id="@+id/relLayoutMoods2"
+        android:layout_below="@id/relLayoutMoods1">
+
+        <include layout="@layout/layout_center_viewpager"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

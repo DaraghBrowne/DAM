@@ -9,12 +9,12 @@ import android.view.MenuItem;
 
 import com.example.darag.dam_app.Fragments.BreatheFragment;
 import com.example.darag.dam_app.Fragments.CRFragment;
-import com.example.darag.dam_app.Fragments.HomeFragment;
-import com.example.darag.dam_app.Fragments.MoodsFragment;
+import com.example.darag.dam_app.HomeFragments.HomeFragment;
+import com.example.darag.dam_app.MoodsFragments.MoodsFragment;
 import com.example.darag.dam_app.Fragments.SettingsFragment;
 import com.example.darag.dam_app.R;
 
-public class HomeActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

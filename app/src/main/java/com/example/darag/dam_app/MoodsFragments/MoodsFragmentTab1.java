@@ -1,4 +1,4 @@
-package com.example.darag.dam_app.Fragments;
+package com.example.darag.dam_app.MoodsFragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,16 +11,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.darag.dam_app.Models.Mood;
 import com.example.darag.dam_app.R;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MoodsFragment extends Fragment {
+public class MoodsFragmentTab1 extends Fragment {
 
     EditText editTextMoodNote;
     Button buttonAddMood;
@@ -31,31 +29,31 @@ public class MoodsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_moods,container,false);
+        View view = inflater.inflate(R.layout.fragment_moods_tab1, container, false);
 
         databaseMoods = FirebaseDatabase.getInstance().getReference("moods");//passing a parameter ensure we get ref of root and not json tree (???)
 
-         editTextMoodNote = view.findViewById(R.id.editTextMood);
-         buttonAddMood = view.findViewById(R.id.buttonAddMood);
-         spinnerMoods = view.findViewById(R.id.spinnerMoods);
+        editTextMoodNote = view.findViewById(R.id.editTextMood);
+        buttonAddMood = view.findViewById(R.id.buttonAddMood);
+        spinnerMoods = view.findViewById(R.id.spinnerMoods);
 
-         buttonAddMood.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
+        buttonAddMood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 addMoodNote();
-             }
-         });
-         return view;
+            }
+        });
+        return view;
 
     }
 
 
-    private void addMoodNote(){
+    private void addMoodNote() {
         String moodNote = editTextMoodNote.getText().toString();
         String moodType = spinnerMoods.getSelectedItem().toString();
 
         //if moodNote box is not empty we will add it to fireabse database
-        if(!TextUtils.isEmpty(moodNote)){
+        if (!TextUtils.isEmpty(moodNote)) {
 
             //creates unique string inside moods for id
             String id = databaseMoods.push().getKey();
@@ -66,12 +64,9 @@ public class MoodsFragment extends Fragment {
             //id will be diff for each set of values entered
             databaseMoods.child(id).setValue(mood);
 
-            Toast.makeText(getActivity(),"Mood Note added!", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Mood Note added!", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getActivity(), "Please enter your mood note", Toast.LENGTH_LONG);
         }
-        else    {
-            Toast.makeText(getActivity(),"Please enter your mood note", Toast.LENGTH_LONG);
-        }
-
-
     }
 }
