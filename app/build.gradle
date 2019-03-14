@@ -19,7 +19,12 @@ android {
     }
 }
 
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
 dependencies {
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'  //dependency for bottomNav
@@ -43,6 +48,9 @@ dependencies {
 
     //lib for gif (breathing)
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+
+    //lib for graphing
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0-alpha'
 
 }
 

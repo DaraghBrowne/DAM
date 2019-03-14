@@ -18,6 +18,8 @@ import com.example.darag.dam_app.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Date;
+
 public class MoodsFragmentTab1 extends Fragment {
 
     EditText editTextMoodNote;
@@ -51,6 +53,7 @@ public class MoodsFragmentTab1 extends Fragment {
     private void addMoodNote() {
         String moodNote = editTextMoodNote.getText().toString();
         String moodType = spinnerMoods.getSelectedItem().toString();
+        long moodDate = new Date().getTime();
 
         //if moodNote box is not empty we will add it to fireabse database
         if (!TextUtils.isEmpty(moodNote)) {
@@ -59,7 +62,7 @@ public class MoodsFragmentTab1 extends Fragment {
             String id = databaseMoods.push().getKey();
 
             //new mood type var
-            Mood mood = new Mood(id, moodType, moodNote);
+            Mood mood = new Mood(id, moodType, moodNote, moodDate);
 
             //id will be diff for each set of values entered
             databaseMoods.child(id).setValue(mood);
