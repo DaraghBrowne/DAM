@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.LoginActivity"
-    android:background="@color/color4"
+    android:background="@color/color1"
     tools:layout_editor_absoluteY="81dp"
     >
 
@@ -63,7 +63,7 @@
 
     <Button
         android:id="@+id/loginRegButton"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black_colour"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,7 +80,7 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/black_colour"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"

@@ -28,7 +28,7 @@ public class HomeFragmentTab1 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home_tab1,container,false);
 
         textViewUserName = view.findViewById(R.id.welcome_text);
-        textViewUserName.setText("Welcome "+ name);
+        textViewUserName.setText("Welcome "+ name + " to DAM");
 
         return view;
 
