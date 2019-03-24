@@ -11,9 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.darag.dam_app.Adapters.SectionsPagerAdapter;
-import com.example.darag.dam_app.CRFragments.CRFragmentTab1;
-import com.example.darag.dam_app.CRFragments.CRFragmentTab2;
-import com.example.darag.dam_app.CRFragments.CRFragmentTab3;
 import com.example.darag.dam_app.R;
 
 public class CalmFragment extends Fragment {
@@ -27,7 +24,7 @@ public class CalmFragment extends Fragment {
         //adding fragments to the adapter
         adapter.addFragment(new CalmFragmentBreathe());
         adapter.addFragment(new CalmFragmentMindfulness());
-        adapter.addFragment(new CalmFragmentTab3());
+        adapter.addFragment(new CalmFragmentResources());
         //declare viewpager object
         ViewPager viewpager = view.findViewById(R.id.home_fragment_container);
 
@@ -40,7 +37,7 @@ public class CalmFragment extends Fragment {
         //set text in tabs
         tabLayout.getTabAt(0).setText("Breathe");
         tabLayout.getTabAt(1).setText("Mindfulness");
-        tabLayout.getTabAt(2).setText("Tab3");
+        tabLayout.getTabAt(2).setText("Resources");
 
 
         return view;
