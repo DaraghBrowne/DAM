@@ -1,49 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textViewMoods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="85dp"
         android:fontFamily="monospace"
         android:text="How are You Feeling?"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinnerMoods"
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekbarMoods"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginBottom="-1dp"
+        android:layout_toStartOf="@+id/textView20"
+        android:text="Bad"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekbarMoods"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toStartOf="@+id/textView21"
+        android:text="Okay"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seekbarMoods"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="272dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="0dp"
+        android:text="Good"
+        android:textStyle="bold" />
+
+    <SeekBar
+        android:id="@+id/seekbarMoods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewMoods"
+        android:layout_above="@+id/textView24"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp"
-        android:entries="@array/moods" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        android:max="10"
+        android:progress="5"
+        android:progressDrawable="@drawable/custom_seekbar"
+        android:thumb="@drawable/custom_thumb" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView24"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="174dp"
+        android:layout_toStartOf="@+id/textView24"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView24"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@+id/textView24"
+        android:text="10" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextMood"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="156dp"
+        android:text="5" />
 
     <EditText
         android:id="@+id/editTextMood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/spinnerMoods"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
+        android:layout_above="@+id/buttonAddMood"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="30dp"
         android:ems="10"
-        android:hint="Enter a note on how you're feeling..."
+        android:hint="Enter a note on how you're feeling (optional)"
         android:inputType="textMultiLine" />
 
     <Button
         android:id="@+id/buttonAddMood"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextMood"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/rounded_button"
         android:text="Add Mood" />
+
+    <TextView
+        android:id="@+id/textViewNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView23"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="206dp"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
 </RelativeLayout>

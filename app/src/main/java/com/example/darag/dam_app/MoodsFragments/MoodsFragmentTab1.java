@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.darag.dam_app.Models.Mood;
@@ -24,7 +26,9 @@ public class MoodsFragmentTab1 extends Fragment {
 
     EditText editTextMoodNote;
     Button buttonAddMood;
-    Spinner spinnerMoods;
+    SeekBar seekBarMoods;
+
+    TextView textViewNum;
 
     DatabaseReference databaseMoods;
 
@@ -37,12 +41,31 @@ public class MoodsFragmentTab1 extends Fragment {
 
         editTextMoodNote = view.findViewById(R.id.editTextMood);
         buttonAddMood = view.findViewById(R.id.buttonAddMood);
-        spinnerMoods = view.findViewById(R.id.spinnerMoods);
+        seekBarMoods = view.findViewById(R.id.seekbarMoods);
+        textViewNum = view.findViewById(R.id.textViewNum);
+        textViewNum.setText("Current Mood:\n5/10");
+
+        seekBarMoods.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                textViewNum.setText("Current Mood:\n"+i+"/10");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
 
         buttonAddMood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addMoodNote();
+                addMood();
             }
         });
         return view;
@@ -50,26 +73,22 @@ public class MoodsFragmentTab1 extends Fragment {
     }
 
 
-    private void addMoodNote() {
+    private void addMood() {
         String moodNote = editTextMoodNote.getText().toString();
-        String moodType = spinnerMoods.getSelectedItem().toString();
-        long moodDate = new Date().getTime();
+        int moodNum= seekBarMoods.getProgress();
+        String moodDate = String.valueOf(new Date().getTime());
 
-        //if moodNote box is not empty we will add it to fireabse database
-        if (!TextUtils.isEmpty(moodNote)) {
+        //if moodNote box is not empty we will add it to fireabase database
 
             //creates unique string inside moods for id
             String id = databaseMoods.push().getKey();
 
-            //new mood type var
-            Mood mood = new Mood(id, moodType, moodNote, moodDate);
+            //new mood var
+            Mood mood = new Mood(id, moodNum, moodNote, moodDate);
 
             //id will be diff for each set of values entered
             databaseMoods.child(id).setValue(mood);
 
-            Toast.makeText(getActivity(), "Mood Note added!", Toast.LENGTH_LONG).show();
-        } else {
-            Toast.makeText(getActivity(), "Please enter your mood note", Toast.LENGTH_LONG);
-        }
+            Toast.makeText(getActivity(), "Mood added!", Toast.LENGTH_LONG).show();
     }
 }

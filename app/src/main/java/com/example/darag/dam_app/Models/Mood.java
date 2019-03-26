@@ -3,9 +3,9 @@ package com.example.darag.dam_app.Models;
 public class Mood {
 
     String moodId;
-    String moodType;
+    int moodNum;
     String moodNote;
-    long moodDate;
+    String moodDate;
 
 
     //constructor - will be used while we read the values!
@@ -14,9 +14,9 @@ public class Mood {
     }
 
     //constructor to initialise our variables
-    public Mood(String moodId, String moodType, String moodNote, long moodDate) {
+    public Mood(String moodId, int moodNum, String moodNote, String moodDate) {
         this.moodId = moodId;
-        this.moodType = moodType;
+        this.moodNum = moodNum;
         this.moodNote = moodNote;
         this.moodDate = moodDate;
     }
@@ -25,8 +25,8 @@ public class Mood {
         return moodId;
     }
 
-    public String getMoodType() {
-        return moodType;
+    public int getMoodNum() {
+        return moodNum;
     }
 
     public String getMoodNote() {
@@ -34,6 +34,6 @@ public class Mood {
     }
 
     public String getMoodDate() {
-        return String.valueOf(moodDate);
+        return moodDate;
     }
 }
