@@ -22,8 +22,8 @@ public class HomeFragment extends Fragment {
         //get the fragment manager - getChildFragmentManager() needed for nesting fragments
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getChildFragmentManager());
         //adding fragments to the adapter
-        adapter.addFragment(new HomeFragmentTab1());
-        adapter.addFragment(new HomeFragmentTab2());
+        adapter.addFragment(new HomeFragmentWelcome());
+        adapter.addFragment(new HomeFragmentInfo());
         //declare viewpager object
         ViewPager viewpager = view.findViewById(R.id.home_fragment_container);
 

@@ -13,7 +13,7 @@ import android.widget.ImageButton;
 
 import com.example.darag.dam_app.R;
 
-public class HomeFragmentTab2 extends Fragment {
+public class HomeFragmentInfo extends Fragment {
 
     ImageButton imageButtonDepression;
     ImageButton imageButtonAnxiety;
@@ -27,7 +27,7 @@ public class HomeFragmentTab2 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_home_tab2,container,false);
+        View view = inflater.inflate(R.layout.fragment_home_info,container,false);
 
         imageButtonDepression = view.findViewById(R.id.imageButtonDepression);
         imageButtonAnxiety = view.findViewById(R.id.imageButtonAnxiety);

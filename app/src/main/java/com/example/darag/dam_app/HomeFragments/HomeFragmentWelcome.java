@@ -13,7 +13,7 @@ import com.example.darag.dam_app.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class HomeFragmentTab1 extends Fragment {
+public class HomeFragmentWelcome extends Fragment {
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     String name = user.getDisplayName();
@@ -25,7 +25,7 @@ public class HomeFragmentTab1 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //specify layout we want to show for the fragment
-        View view = inflater.inflate(R.layout.fragment_home_tab1,container,false);
+        View view = inflater.inflate(R.layout.fragment_home_welcome,container,false);
 
         textViewUserName = view.findViewById(R.id.welcome_text);
         textViewUserName.setText("Welcome "+ name + " to DAM");

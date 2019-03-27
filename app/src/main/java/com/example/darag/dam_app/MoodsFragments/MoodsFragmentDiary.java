@@ -8,13 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.example.darag.dam_app.Adapters.MoodList;
 import com.example.darag.dam_app.Models.Mood;
 import com.example.darag.dam_app.R;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,31 +21,29 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-public class MoodsFragmentTab3 extends Fragment{
+
+public class MoodsFragmentDiary extends Fragment {
 
     //Firebase
     DatabaseReference databaseMoods;
 
-    LineChart chart;
-    List<Mood> moodList;
-    List<Entry> entries;
+    //Android Layout
+    ListView listView;
 
+    List<Mood> moodList;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_moods_tab3,container,false);
+        View view = inflater.inflate(R.layout.fragment_moods_diary,container,false);
 
         databaseMoods = FirebaseDatabase.getInstance().getReference("moods");//passing a parameter ensure we get ref of root and not json tree (???)
-
-        //retrieve Linechart from xml... get instance of line chart
-        chart = view.findViewById(R.id.moodGraph);
-
+        listView = view.findViewById(R.id.database_linear_layout);
         moodList = new ArrayList<>();
-        entries = new ArrayList<>();
 
         return view;
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -57,24 +53,21 @@ public class MoodsFragmentTab3 extends Fragment{
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 moodList.clear();
-                int i = 0;
 
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     Mood mood = ds.getValue(Mood.class);
                     moodList.add(mood);
-                    Log.d("moodLog2", mood.getMoodDate());
-                    Log.d("moodLog2", String.valueOf(mood.getMoodNum()));
-                    entries.add(new Entry(i,mood.getMoodNum()));
-                    i++;
+                    Log.d("moodLog", mood.getMoodDate());
+                    Log.d("moodLog", String.valueOf(mood.getMoodNum()));
+
                 }
 
-                LineDataSet dataSet = new LineDataSet(entries, "Label"); // add entries to dataset
-                //dataSet.setColor(...);
-                //dataSet.setValueTextColor(...); // styling, ...
+                //making sure its not null fixed my nullpointerexception error
+                if (getActivity()!=null) {
+                    MoodList adapter = new MoodList(getActivity(), moodList);
+                    listView.setAdapter(adapter);
+                }
 
-                LineData lineData = new LineData(dataSet);
-                chart.setData(lineData);
-                chart.invalidate(); // refresh
             }
 
             @Override

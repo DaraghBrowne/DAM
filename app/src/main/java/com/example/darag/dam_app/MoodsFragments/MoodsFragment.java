@@ -23,9 +23,9 @@ public class MoodsFragment extends Fragment {
         //get the fragment manager - getChildFragmentManager() needed for nesting fragments
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getChildFragmentManager());
         //adding fragments to the adapter
-        adapter.addFragment(new MoodsFragmentTab1());
-        adapter.addFragment(new MoodsFragmentTab2());
-        adapter.addFragment(new MoodsFragmentTab3());
+        adapter.addFragment(new MoodsFragmentTracker());
+        adapter.addFragment(new MoodsFragmentDiary());
+        adapter.addFragment(new MoodsFragmentGraph());
         //declare viewpager object
         ViewPager viewpager = view.findViewById(R.id.home_fragment_container);
 

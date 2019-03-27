@@ -16,6 +16,6 @@ public class CalmFragmentResources extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //specify layout we want to show for the fragment
-        return inflater.inflate(R.layout.fragment_calm_tab3,container,false);
+        return inflater.inflate(R.layout.fragment_calm_resources,container,false);
     }
 }

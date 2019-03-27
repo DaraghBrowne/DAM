@@ -1,4 +1,4 @@
-package com.example.darag.dam_app.CRFragments;
+package com.example.darag.dam_app.EmergencyFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,7 @@ import android.widget.EditText;
 
 import com.example.darag.dam_app.R;
 
-public class CRFragmentTab3 extends Fragment {
+public class EmergencyFragmentEmails extends Fragment {
     private EditText mEditTextTo;
     private EditText mEditTextSubject;
     private EditText mEditTextMessage;
@@ -22,7 +22,7 @@ public class CRFragmentTab3 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_cr_tab3,container,false);
+        View view = inflater.inflate(R.layout.fragment_emergency_emails,container,false);
 
         mEditTextTo = view.findViewById(R.id.edit_text_to);
         mEditTextSubject = view.findViewById(R.id.edit_text_subject);

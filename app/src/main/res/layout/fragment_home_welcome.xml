@@ -8,19 +8,23 @@
 
     <TextView
         android:id="@+id/welcome_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="0dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="#c5eddb"
+        android:fontFamily="monospace"
+        android:gravity="center_vertical"
         android:textAlignment="center"
-        android:textSize="30sp"
         android:textColor="@color/black_colour"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/welcome_text2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.371" />
 
     <TextView
         android:id="@+id/welcome_text2"
@@ -46,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="96dp"
-        android:text="Getting around the app is easy - use the bottom navigation to switch to the main pages, and the swipable tab layouts within"
+        android:layout_marginBottom="82dp"
+        android:text="Getting around the app is easy:\n-Use the bottom navigation bar below to switch to the main pages\n-Use the swipable tab layouts within to check out the different features"
         android:textAlignment="center"
         android:textColor="@color/black_colour"
         android:textSize="24sp"
