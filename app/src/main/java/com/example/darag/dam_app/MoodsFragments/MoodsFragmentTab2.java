@@ -40,11 +40,8 @@ public class MoodsFragmentTab2 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_moods_tab2,container,false);
 
         databaseMoods = FirebaseDatabase.getInstance().getReference("moods");//passing a parameter ensure we get ref of root and not json tree (???)
-
         listView = view.findViewById(R.id.database_linear_layout);
-
         moodList = new ArrayList<>();
-
 
         return view;
     }
@@ -62,6 +59,8 @@ public class MoodsFragmentTab2 extends Fragment {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
                     Mood mood = ds.getValue(Mood.class);
                     moodList.add(mood);
+                    Log.d("moodLog", mood.getMoodDate());
+                    Log.d("moodLog", String.valueOf(mood.getMoodNum()));
 
                 }
 
