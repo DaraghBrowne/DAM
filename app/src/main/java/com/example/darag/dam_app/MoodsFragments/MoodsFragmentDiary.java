@@ -13,6 +13,8 @@ import android.widget.ListView;
 import com.example.darag.dam_app.Adapters.MoodList;
 import com.example.darag.dam_app.Models.Mood;
 import com.example.darag.dam_app.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +28,8 @@ public class MoodsFragmentDiary extends Fragment {
 
     //Firebase
     DatabaseReference databaseMoods;
+    FirebaseUser user;
+    String uid;
 
     //Android Layout
     ListView listView;
@@ -38,6 +42,9 @@ public class MoodsFragmentDiary extends Fragment {
         View view = inflater.inflate(R.layout.fragment_moods_diary,container,false);
 
         databaseMoods = FirebaseDatabase.getInstance().getReference("moods");//passing a parameter ensure we get ref of root and not json tree (???)
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
+
         listView = view.findViewById(R.id.database_linear_layout);
         moodList = new ArrayList<>();
 
@@ -54,7 +61,7 @@ public class MoodsFragmentDiary extends Fragment {
 
                 moodList.clear();
 
-                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                for(DataSnapshot ds : dataSnapshot.child(uid).getChildren()){
                     Mood mood = ds.getValue(Mood.class);
                     moodList.add(mood);
                     Log.d("moodLog", mood.getMoodDate());

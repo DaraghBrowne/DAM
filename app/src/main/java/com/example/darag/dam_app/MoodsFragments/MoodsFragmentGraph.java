@@ -17,6 +17,8 @@ import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,6 +31,8 @@ public class MoodsFragmentGraph extends Fragment{
 
     //Firebase
     DatabaseReference databaseMoods;
+    FirebaseUser user;
+    String uid;
 
     LineChart chart;
     List<Mood> moodList;
@@ -41,6 +45,8 @@ public class MoodsFragmentGraph extends Fragment{
         View view = inflater.inflate(R.layout.fragment_moods_graph,container,false);
 
         databaseMoods = FirebaseDatabase.getInstance().getReference("moods");//passing a parameter ensure we get ref of root and not json tree (???)
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
 
         //retrieve Linechart from xml... get instance of line chart
         chart = view.findViewById(R.id.moodGraph);
@@ -61,7 +67,7 @@ public class MoodsFragmentGraph extends Fragment{
                 moodList.clear();
                 int i = 0;
 
-                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                for(DataSnapshot ds : dataSnapshot.child(uid).getChildren()){
                     Mood mood = ds.getValue(Mood.class);
                     moodList.add(mood);
                     Log.d("moodLog2", mood.getMoodDate());

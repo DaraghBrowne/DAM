@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import com.example.darag.dam_app.Models.Mood;
 import com.example.darag.dam_app.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,6 +31,8 @@ public class MoodsFragmentTracker extends Fragment {
     TextView textViewNum;
 
     DatabaseReference databaseMoods;
+    FirebaseUser user;
+    String uid;
 
     @Nullable
     @Override
@@ -36,6 +40,8 @@ public class MoodsFragmentTracker extends Fragment {
         View view = inflater.inflate(R.layout.fragment_moods_tracker, container, false);
 
         databaseMoods = FirebaseDatabase.getInstance().getReference("moods");//passing a parameter ensure we get ref of root and not json tree (???)
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
 
         editTextMoodNote = view.findViewById(R.id.editTextMood);
         buttonAddMood = view.findViewById(R.id.buttonAddMood);
@@ -85,7 +91,7 @@ public class MoodsFragmentTracker extends Fragment {
             Mood mood = new Mood(id, moodNum, moodNote, moodDate);
 
             //id will be diff for each set of values entered
-            databaseMoods.child(id).setValue(mood);
+            databaseMoods.child(uid).child(id).setValue(mood);
 
             Toast.makeText(getActivity(), "Mood added!", Toast.LENGTH_LONG).show();
     }
