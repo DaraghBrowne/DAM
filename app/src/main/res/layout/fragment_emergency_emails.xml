@@ -5,11 +5,55 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/chatMessageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chat"
+            android:textAlignment="center"
+            android:background="@drawable/rounded_button"/>
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/urgentMessageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="urgent"
+            android:textAlignment="center"
+            android:background="@drawable/rounded_button"/>
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/ownMessageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="own message"
+            android:textAlignment="center"
+            android:background="@drawable/rounded_button"/>
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="To:"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
 
     <EditText
         android:id="@+id/edit_text_to"
@@ -42,8 +86,7 @@
         android:layout_height="wrap_content"
         android:lines="10"
         android:gravity="start|top"
-        android:text="Hi,
-I would love to meet and chat about some things."/>
+        android:text="Hi, \nI would love to meet and chat about some things. Please contact me when you can :)"/>
 
     <Button
         android:id="@+id/button_send_email"

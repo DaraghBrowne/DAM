@@ -28,10 +28,8 @@ public class HomeFragmentWelcome extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home_welcome,container,false);
 
         textViewUserName = view.findViewById(R.id.welcome_text);
-        textViewUserName.setText("Welcome "+ name + " to DAM");
+        textViewUserName.setText("Welcome "+ name);
 
         return view;
-
-
     }
 }

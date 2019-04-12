@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    showMessage("login error" + task.getException().getMessage());
+                    showMessage("login error: " + task.getException().getMessage());
                 }
             }
         });

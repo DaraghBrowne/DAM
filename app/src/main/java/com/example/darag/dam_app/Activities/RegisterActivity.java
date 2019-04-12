@@ -17,10 +17,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
+import java.util.regex.Pattern;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText userEmail, userPassword, userPassword2, userName;
-    private Button regBtn ;
+    private Button regBtn;
 
     private FirebaseAuth mAuth;
 
@@ -47,16 +49,15 @@ public class RegisterActivity extends AppCompatActivity {
                 final String password2 = userPassword2.getText().toString();
                 final String name = userName.getText().toString();
 
-                if( email.isEmpty() || name.isEmpty() || password.isEmpty() || !password.equals(password2) ){
+                if (email.isEmpty() || name.isEmpty() || password.isEmpty() || !password.equals(password2)) {
 
                     //error message will be displayed if not all fields are filled in or pws do not match
                     showMessage("Please fill in all fields correctly");
 
-                }
-                else{
+                } else {
 
                     //everything is g - start creating account
-                    CreateUserAccount(email,name, password);
+                    CreateUserAccount(email, name, password);
 
                 }
 
@@ -69,11 +70,11 @@ public class RegisterActivity extends AppCompatActivity {
     private void CreateUserAccount(String email, final String name, String password) {
 
         //method to create user account with specific email and password
-        mAuth.createUserWithEmailAndPassword(email,password)
+        mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
 
                             //user account created successfully
                             showMessage("Account Created!");
@@ -81,8 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                             //after we create an account we need to update their name (/other info if needed)
                             UpdateUserInfo(name, mAuth.getCurrentUser());
 
-                        }
-                        else{
+                        } else {
 
                             //account not successfully created
                             showMessage("account creation error" + task.getException().getMessage());
@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                        if (task.isSuccessful()) {
                             //user info was updated successfully
                             showMessage("Registration Complete");
 
@@ -118,7 +118,22 @@ public class RegisterActivity extends AppCompatActivity {
     //toast messages method
     private void showMessage(String s) {
 
-        Toast.makeText(getApplicationContext(),s, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
 
+    }
+
+    //see if email is valid
+    public static boolean isValidEmail(String email) {
+        {
+            String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
+                    "[a-zA-Z0-9_+&*-]+)*@" +
+                    "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                    "A-Z]{2,7}$";
+
+            Pattern pat = Pattern.compile(emailRegex);
+            if (email == null)
+                return false;
+            return pat.matcher(email).matches();
+        }
     }
 }

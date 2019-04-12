@@ -70,8 +70,6 @@ public class MoodsFragmentGraph extends Fragment{
                 for(DataSnapshot ds : dataSnapshot.child(uid).getChildren()){
                     Mood mood = ds.getValue(Mood.class);
                     moodList.add(mood);
-                    Log.d("moodLog2", mood.getMoodDate());
-                    Log.d("moodLog2", String.valueOf(mood.getMoodNum()));
                     entries.add(new Entry(i,mood.getMoodNum()));
                     i++;
                 }

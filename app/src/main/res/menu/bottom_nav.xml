@@ -14,7 +14,7 @@
     <item
         android:id="@+id/nav_cr"
         android:icon="@drawable/ic_contact_mail_black_24dp"
-        android:title="CodeRed"/>
+        android:title="Emergency"/>
 
     <item
         android:id="@+id/nav_breathe"

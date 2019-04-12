@@ -46,7 +46,9 @@ public class HomeFragmentInfo extends Fragment {
                 builder1.setCancelable(true);
                 //set title and message contents
                 builder1.setTitle("What is Depression?");
-                builder1.setMessage("This is info on Depression");
+                builder1.setMessage("Depression is a mental health condition which can affect thinking, energy, feelings and behaviour." +
+                        "\n\nIt can vary from mild to severe, and can affect many aspects of an individual's life" +
+                        "\n\nIf you think you have depression, Aware recommends that you speak to your GP or a mental health professional. This will help you to get a correct diagnosis and decide which approach to treatment is best for you. ");
                 //ok button for user to close dialogue
                 builder1.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -83,7 +85,8 @@ public class HomeFragmentInfo extends Fragment {
                 AlertDialog.Builder builder3 = new AlertDialog.Builder(getActivity());
                 builder3.setCancelable(true);
                 builder3.setTitle("What is Counselling?");
-                builder3.setMessage("This is info on Counselling");
+                builder3.setMessage("Counselling is a type of talking therapy or psychological therapy. It involves talking to a counsellor about your problems. " +
+                        "\n\nCounsellors are trained to listen sympathetically and can help you deal with any negative thoughts and feelings. They are also skilled at helping you express your worries and concerns.");
                 builder3.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -2,25 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <!-- Top toolbar -->
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/sign_out"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/relLayoutSettings1">
-
-        <include layout="@layout/layout_top_tabs"/>
-
-    </RelativeLayout>
-
-    <!-- main section (nested fragment to be swipable tab) -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/relLayoutSettings2"
-        android:layout_below="@id/relLayoutSettings1">
-
-        <include layout="@layout/layout_center_viewpager"/>
-
-    </RelativeLayout>
+        android:layout_centerInParent="true"
+        android:text="Sign Out" />
 
 </RelativeLayout>
