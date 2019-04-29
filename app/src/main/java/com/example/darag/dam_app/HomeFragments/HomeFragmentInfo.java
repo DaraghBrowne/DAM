@@ -67,7 +67,9 @@ public class HomeFragmentInfo extends Fragment {
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(getActivity());
                 builder2.setCancelable(true);
                 builder2.setTitle("What is Anxiety?");
-                builder2.setMessage("This is info on Anxiety");
+                builder2.setMessage("The symptoms of generalised anxiety disorder can vary from person to person and be both physical and psychological." +
+                        "\n\nAnxiety involves a frequent unpleasant feeling typically associated with uneasiness, apprehension and worry. It has physical, emotional and behavioural effects." +
+                        "\n\nAnxiety is considered normal and adaptive when it serves to improve peoples' functioning or wellbeing. In contrast, abnormal anxiety is a chronic condition that impairs peoples' functioning and interferes with their well-being.");
                 builder2.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -103,8 +105,10 @@ public class HomeFragmentInfo extends Fragment {
             public void onClick(View view) {
                 AlertDialog.Builder builder4 = new AlertDialog.Builder(getActivity());
                 builder4.setCancelable(true);
-                builder4.setTitle("What is Counselling?");
-                builder4.setMessage("This is info on Counselling");
+                builder4.setTitle("What is Medication and how can it help?");
+                builder4.setMessage("An effective way of treating mental health illnesses may be through using medication" +
+                        "\n\nA psychiatrist or GP (family doctor) can prescribe medications for mental illness." +
+                        "\n\nHow do medications treat mental illnesses?\nMedications work by rebalancing the chemicals in the brain. Different types of medication act on different chemical pathways");
                 builder4.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -122,7 +126,10 @@ public class HomeFragmentInfo extends Fragment {
                 AlertDialog.Builder builder5 = new AlertDialog.Builder(getActivity());
                 builder5.setCancelable(true);
                 builder5.setTitle("How can we reduce Stigma around Mental Health?");
-                builder5.setMessage("This is info on Stigma");
+                builder5.setMessage("Stigma is defined as a sign of disgrace or discredit, which sets a person apart from others. " +
+                        "Stigma can be deeply hurtful and isolating, and is one of the most significant problems encountered by people with mental health problems. Learning to live with mental health problems is made more difficult, when someone experiences the prejudice caused by stigma. " +
+                        "\n\nThere are many steps we can take to help reduce the stigmas that surround mental health. One way to reduce stigma is to make sure the words you use are not hurtful and do not reinforce negative stereotypes." +
+                        "\n\nOther ways include: Talking openly about mental health, educating yourself and others on the subject, Encourage equality between physical and mental illness; and show compassion for those with mental illnesses.");
                 builder5.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -139,8 +146,11 @@ public class HomeFragmentInfo extends Fragment {
             public void onClick(View view) {
                 AlertDialog.Builder builder6 = new AlertDialog.Builder(getActivity());
                 builder6.setCancelable(true);
-                builder6.setTitle("X?");
-                builder6.setMessage("X!");
+                builder6.setTitle("Getting Help");
+                builder6.setMessage("If you are suffering from any mental health issues, it is important to ask for help" +
+                        "\n\nthis can start with something as simple as texting a friend or family member. Going for a walk or even a phone call can help alleviate the negative thought that may be on your mind." +
+                        "\n\nShare your thoughts with your doctor and see what they have to say on the mater. remember, mental illnesses are just as important as physical illnesses." +
+                        "\n\nIt is important to remember that you are not alone and that.");
                 builder6.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

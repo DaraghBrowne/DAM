@@ -32,6 +32,7 @@ public class EmergencyFragmentEmails extends Fragment {
         mEditTextSubject = view.findViewById(R.id.edit_text_subject);
         mEditTextMessage = view.findViewById(R.id.edit_text_message);
 
+
         msg1 = view.findViewById(R.id.chatMessageBtn);
         msg2 = view.findViewById(R.id.urgentMessageBtn);
         msg3 = view.findViewById(R.id.ownMessageBtn);
@@ -42,6 +43,7 @@ public class EmergencyFragmentEmails extends Fragment {
             public void onClick(View view) {
                 mEditTextMessage.setText("Hi,\n" +
                         "I would love to meet and chat about some things. Please contact me when you can :)");
+                mEditTextSubject.setText("Finding things difficult");
             }
         });
 
@@ -50,13 +52,15 @@ public class EmergencyFragmentEmails extends Fragment {
             public void onClick(View view) {
                 mEditTextMessage.setText("Hi,\n" +
                         "Please contact me ASAP. I am having a tough time and I really need some help");
+                mEditTextSubject.setText("Please contact me ASAP");
             }
         });
 
         msg3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mEditTextMessage.setText("");
+                mEditTextMessage.setText("<enter message content here>");
+                mEditTextSubject.setText("<enter subject here>");
             }
         });
 

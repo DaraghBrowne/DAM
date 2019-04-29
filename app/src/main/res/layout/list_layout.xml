@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 
     <TextView
         android:id="@+id/textViewDisplayMDate"
@@ -12,8 +17,8 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black_colour"
-        android:typeface="monospace" />
+        android:textColor="@color/black_colour" />
+
 
     <TextView
         android:id="@+id/textViewDisplayMNum"
@@ -21,14 +26,16 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@android:color/black"
-        android:typeface="monospace" />
+        android:textColor="@android:color/black"/>
 
     <TextView
         android:id="@+id/textViewDisplayMNote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        android:textColor="@android:color/black"
-        android:typeface="monospace" />
+        android:textColor="@android:color/black"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
 </LinearLayout>

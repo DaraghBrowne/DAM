@@ -17,7 +17,8 @@
             android:layout_height="wrap_content"
             android:text="Chat"
             android:textAlignment="center"
-            android:background="@drawable/rounded_button"/>
+            android:background="@drawable/rounded_button"
+            />
         <Space
             android:layout_width="10dp"
             android:layout_height="match_parent" />
@@ -38,7 +39,7 @@
             android:id="@+id/ownMessageBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="own message"
+            android:text="Other"
             android:textAlignment="center"
             android:background="@drawable/rounded_button"/>
 
@@ -46,7 +47,15 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="25dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@android:color/black"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -92,6 +101,7 @@
         android:id="@+id/button_send_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
         android:text="Send"/>
 
 </LinearLayout>
